@@ -87,10 +87,10 @@ def main():
     openai_key = os.getenv('DEEPSEEK_API_KEY')
     
     if not all([github_token, openai_key]):
-        raise EnvironmentError("Please set GITHUB_TOKEN and OPENAI_API_KEY")
+        raise EnvironmentError("Please set GITHUB_TOKEN and DEEPSEEK_API_KEY")
 
     # Configure DSPy with modern configuration
-    lm = dspy.LM('openai/gpt-4o-mini', api_key=openai_key)
+    lm = dspy.LM('deepseek/deepseek-chat', api_key=openai_key)
     dspy.configure(lm=lm)
 
     # Setup MCP client
