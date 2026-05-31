@@ -3,7 +3,6 @@ from typing import Dict, List, Optional
 import dspy
 from dspy import Prediction
 from agenspy import RealMCPClient
-import os
 DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 

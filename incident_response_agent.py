@@ -3,6 +3,8 @@ import dspy
 from typing import Dict, List, Optional
 from datetime import datetime
 from agenspy import RealMCPClient
+DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 
 class IncidentResponseAgent(dspy.Module):
     """Agent for automated incident response."""
