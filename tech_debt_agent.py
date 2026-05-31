@@ -109,13 +109,13 @@ class TechDebtAgent(dspy.Module):
 def main():
     """Run Tech Debt Agent demo."""
     github_token = os.getenv('GITHUB_TOKEN')
-    openai_key = os.getenv('OPENAI_API_KEY')
+    deepseek_key = os.getenv('DEEPSEEK_API_KEY')
     
-    if not all([github_token, openai_key]):
-        raise EnvironmentError("Please set GITHUB_TOKEN and OPENAI_API_KEY")
+    if not all([github_token, deepseek_key]):
+        raise EnvironmentError("Please set GITHUB_TOKEN and DEEPSEEK_API_KEY")
 
     # Configure DSPy with latest syntax
-    gpt4_mini = dspy.LM('openai/gpt-4o-mini', max_tokens=2000)
+    gpt4_mini = dspy.LM('deepseek/deepseek-chat', max_tokens=2000)
     dspy.configure(lm=gpt4_mini)
     # Setup MCP client
     mcp_client = RealMCPClient(
