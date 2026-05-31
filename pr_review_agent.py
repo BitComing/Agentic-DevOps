@@ -3,6 +3,9 @@ from typing import Dict, List, Optional
 import dspy
 from dspy import Prediction
 from agenspy import RealMCPClient
+import os
+DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 
 class PRReviewAgent(dspy.Module):
     """Agent for automated PR reviews."""
@@ -81,7 +84,7 @@ class PRReviewAgent(dspy.Module):
 def main():
     """Run PR Review Agent demo."""
     github_token = os.getenv('GITHUB_TOKEN')
-    openai_key = os.getenv('OPENAI_API_KEY')
+    openai_key = os.getenv('DEEPSEEK_API_KEY')
     
     if not all([github_token, openai_key]):
         raise EnvironmentError("Please set GITHUB_TOKEN and OPENAI_API_KEY")
